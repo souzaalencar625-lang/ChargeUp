@@ -1,0 +1,107 @@
+:root{
+  --bg:#050805;--surface:#0D150D;--ink:#F2F7F2;--muted:#A3B2A3;
+  --green:#44E619;--silver:#C9D1C9;--line:#1C2B1C;
+  --disp:'Chakra Petch',system-ui,sans-serif;
+  --body:'Figtree',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+ul{margin:0;padding:0;list-style:none}
+em{font-style:italic;color:var(--green)}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+  padding:.5rem max(1.25rem,calc((100vw - 1080px)/2));background:rgba(5,8,5,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.marca img{height:52px;width:auto}
+.topo nav{display:flex;gap:1.75rem;font-weight:500}
+.topo nav a{text-decoration:none;color:var(--muted);transition:color .2s}
+.topo nav a:hover{color:var(--green)}
+
+/* hero */
+.hero{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1.05fr;gap:2.5rem;align-items:center;padding:4rem 1.25rem 5rem}
+.selo{margin:0 0 1rem;color:var(--silver);letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;animation:subir .8s .1s both}
+h1{margin:0;font:700 clamp(2.6rem,6.5vw,4.8rem)/1 var(--disp);font-style:italic}
+h1{animation:subir .9s .25s both}
+.barra{height:6px;max-width:28rem;margin-top:2.5rem;background:var(--line);border-radius:6px;overflow:hidden}
+.barra i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#2a9d10,var(--green));
+  animation:carregar 2.8s .8s cubic-bezier(.3,.8,.3,1) both,brilho 2.5s 3.6s ease-in-out infinite}
+.foto{margin:0;border-radius:22px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 0 70px rgba(68,230,25,.22);transition:transform .25s ease-out,box-shadow .3s;will-change:transform;animation:subir 1s .45s both}
+.foto:hover{box-shadow:0 0 90px rgba(68,230,25,.38)}
+.foto img{width:100%;height:auto}
+
+/* slogan */
+.slogan{text-align:center;padding:5rem 1.25rem;border-top:1px solid var(--line);
+  background:radial-gradient(ellipse at 50% 0%,#12360a,transparent 65%)}
+.slogan>p{margin:0 auto 2rem;font:700 clamp(1.9rem,5vw,3.4rem)/1.1 var(--disp);font-style:italic}
+.produtos{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
+.produtos li{padding:.55rem 1.2rem;border:1.5px solid var(--green);border-radius:999px;font-weight:700;color:var(--ink);
+  transition:background .2s,color .2s}
+.produtos li:hover{background:var(--green);color:#041004}
+
+/* blocos */
+.bloco{max-width:1080px;margin:0 auto;padding:4.5rem 1.25rem;border-top:1px solid var(--line)}
+h2{margin:0 0 2.5rem;font:700 clamp(1.9rem,4vw,2.7rem)/1.1 var(--disp);font-style:italic}
+.beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:2rem}
+.item{display:flex;gap:1.1rem;align-items:flex-start}
+.item h3{margin:.15rem 0 .25rem;font:700 1.25rem var(--disp)}
+.item p{margin:0;color:var(--muted)}
+
+/* ícones */
+.icone{flex:none;width:60px;height:60px;border:2px solid var(--green);border-radius:50%;display:grid;place-items:center;
+  transition:box-shadow .3s,transform .3s}
+.icone.pequeno{margin-bottom:1rem}
+.item:hover .icone,.sobre article:hover .icone{box-shadow:0 0 22px rgba(68,230,25,.6);transform:scale(1.07)}
+svg{width:30px;height:30px;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.js .reveal svg *{stroke-dasharray:1;stroke-dashoffset:1}
+.js .reveal.in svg *{stroke-dashoffset:0;transition:stroke-dashoffset 1.4s .3s ease-out}
+
+/* sobre */
+.sobre{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2.5rem}
+.sobre h3{margin:0 0 .5rem;font:700 1.35rem var(--disp);color:var(--green)}
+.sobre p{margin:0;color:var(--muted)}
+.sobre ul li{color:var(--muted);padding-left:1.1rem;position:relative}
+.sobre ul li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--green)}
+
+/* final */
+.final{text-align:center;padding:5rem 1.25rem;border-top:1px solid var(--line);
+  background:radial-gradient(ellipse at 50% 100%,#12360a,transparent 70%)}
+.terra{width:96px;height:96px;margin:0 auto 1.5rem;display:grid;place-items:center;border-radius:50%;
+  border:2px solid var(--green);animation:pulso 3s ease-in-out infinite}
+.terra svg{width:56px;height:56px}
+.final p{margin:0;font:700 clamp(1.8rem,4.5vw,3rem)/1.1 var(--disp);font-style:italic}
+
+/* rodapé */
+.rodape{max-width:1080px;margin:0 auto;padding:2rem 1.25rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;
+  border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+.rodape img{height:40px;width:auto}
+.rodape ul{display:flex;gap:1.25rem;flex-wrap:wrap}
+.rodape li{color:var(--green);font-weight:700}
+
+/* revelar ao rolar */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease-out,transform .8s ease-out}
+.js .reveal.in{opacity:1;transform:none}
+.js .beneficios .reveal:nth-child(2),.js .sobre .reveal:nth-child(2){transition-delay:.12s}
+.js .beneficios .reveal:nth-child(3),.js .sobre .reveal:nth-child(3){transition-delay:.24s}
+.js .beneficios .reveal:nth-child(4){transition-delay:.36s}
+
+/* animações */
+@keyframes subir{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes carregar{from{width:4%}to{width:100%}}
+@keyframes brilho{0%,100%{box-shadow:0 0 0 rgba(68,230,25,0)}50%{box-shadow:0 0 16px rgba(68,230,25,.9)}}
+@keyframes pulso{0%,100%{box-shadow:0 0 0 rgba(68,230,25,0)}50%{box-shadow:0 0 34px rgba(68,230,25,.55)}}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:2.5rem}
+  .topo nav{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none}
+  .js .reveal svg *{stroke-dashoffset:0}
+}
